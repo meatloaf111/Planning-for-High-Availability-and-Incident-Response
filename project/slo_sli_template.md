@@ -1,8 +1,8 @@
-# API Service
-
-| Category     | SLI | SLO                                                                                                         |
-|--------------|-----|-------------------------------------------------------------------------------------------------------------|
-| Availability |     | 99%                                                                                                         |
-| Latency      |     | 90% of requests below 100ms                                                                                 |
-| Error Budget |     | Error budget is defined at 20%. This means that 20% of the requests can fail and still be within the budget |
-| Throughput   |     | 5 RPS indicates the application is functioning                                                              |
+| # API Service  |                                                                                                                                                                                  |                                                                                                               |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| Category       | SLI                                                                                                                                                                              | SLO                                                                                                           |
+| -------------- | -----                                                                                                                                                                            | ------------------------------------------------------------------------------------------------------------- |
+| Availability   | Total number of successful requests / total number of requests  over the last 5 minutes | 99%                                                                                                           |
+| Latency        | Bucket of request in a histogram showing the 90 percentile of requests finish in below 100ms                                                      | 90% of requests below 100ms                                                                                   |
+| Error Budget   | Remaining error budget should be 80%  | Error budget is defined at 20%. This means that 20% of the requests can fail and still be within the budget   |
+| Throughput     | Successful requests per second                                                                                                              | 5 RPS indicates the application is functioning                                                                |
