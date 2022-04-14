@@ -20,7 +20,7 @@ data "terraform_remote_state" "vpc" {
   backend = "s3" 
   config = {
      bucket = "udacity-tf-kadachi"
-     key    = "terraform/terraform.tfstate"
+     key    = "udacity-tf-keadachi-use2"
      region = "us-east-2"
    }
 
