@@ -15,22 +15,28 @@ us-west-1 region:"us-west-1a","us-west-1b"
 | Load Balancer         | Load Balancer                                                        | N/A                                                                    | 1                                                               | Deployed to DR region                                                                                                            |
 | RDS                   | Database                                                             | db.t2.small                                                            | 1                                                               | Deployed to DR region and data is replicated                                                                                                            |
 | SSH Keys              | SSH keys for administering the EC2 instances                         | N/A                                                                    | 1                                                               | Created in each regions by manual                                                                                                            |
-| Monitoring            | Monitoring platform (Grafana and Prometheus) for the web application | N/Q                                                                    | 1                                                               | Deployed to DR region                                                                                                            |
+| Monitoring            | Monitoring platform (Grafana and Prometheus) for the web application | N/A                                                                    | 1                                                               | Deployed to DR region                                                                                                            |
 | Asset name            | Brief description                                                    | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
 
 
 ### Descriptions
 More detailed descriptions of each asset identified above.
 ・Ubuntsu Web servers hosts flask web applications
+
 ・RDS holds data for the above web applications
+
 ・EKS nodes hosts monitoring platform(grafana and prometheus) to monitor the web application
+
 ・SSH keys are uses to administre web nodes
+
 ・Load balancer works to handle the incoming request and allocate them to the Web servers
 
 ## DR Plan
 ### Pre-Steps:
 List steps you would perform to setup the infrastructure in the other region. It doesn't have to be super detailed, but high-level should suffice.
+
 ・Ensure both sites are configured the same
+
 ・Use IaC to do this
 
 ## Steps:
@@ -38,6 +44,7 @@ You won't actually perform these steps, but write out what you would do to "fail
 
 ・Point your DNS to your secondary region
 This can be done with a name provider like Amazon route 53
+
 ・Failover your database replication instances to another region
 Manually force the secondary region to become primary at the database level, or
 Automatically failover the database by health checks
